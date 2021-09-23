@@ -1,0 +1,17 @@
+h2{
+    text-align: center;
+    color: white;
+    font-family: 'Ranchers', cursive;
+}
+header{
+    display: block;
+    background-color: #202020;
+}
+nav{
+    display: block;
+}
+.container{
+    display: block;
+    padding-top: 10px;
+    height: 60px;
+}

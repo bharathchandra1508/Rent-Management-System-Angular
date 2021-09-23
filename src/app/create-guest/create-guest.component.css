@@ -1,0 +1,10 @@
+h3{
+    text-align: center;
+}
+.form-required{
+    color: #f23a3c;
+}
+.form-label{
+    color: #808080;
+    font-size: smaller;
+}

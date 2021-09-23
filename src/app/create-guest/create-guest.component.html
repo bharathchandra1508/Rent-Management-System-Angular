@@ -1,0 +1,138 @@
+<div class="card">
+    <div class="card-body">
+        <h3>Enter Guest Details</h3>
+        <br>
+        <form (ngSubmit)="onSubmit()" [formGroup]="exform">
+            <div class="form-group">
+                <label class="form-label">Name (As Per Govt. ID)</label>
+                <span class="form-required">*</span>
+                <input type="text" class="form-control" id="name" name="name"
+                    [(ngModel)]="guest.fullName" formControlName="name">
+                <small *ngIf="exform.get('name').invalid && exform.get('name').touched" 
+                    class="text-danger">Enter Valid Name</small>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group col-md-6">
+                  <label class="form-label">Email</label>
+                  <span class="form-required">*</span>
+                  <input type="email" class="form-control" id="email" name="email"
+                  [(ngModel)]="guest.email" formControlName="email">
+                  <small *ngIf="exform.get('email').invalid && exform.get('email').touched" 
+                  class="text-danger">Enter Valid Email</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label">Mobile Number</label>
+                    <span class="form-required">*</span>
+                    <input type="text" class="form-control" id="mobilenumber" name="mobilenumber"
+                    [(ngModel)]="guest.phone" formControlName="mobile">
+                    <small *ngIf="exform.get('mobile').invalid && exform.get('mobile').touched" 
+                    class="text-danger">Enter Valid Mobile Number</small>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="form-label">Date Of Birth</label>
+                    <span class="form-required">*</span>
+                    <input type="date" class="form-control" id="dob" name="dob"
+                    [(ngModel)]="guest.dob" formControlName="dob" max="{{maxDOB}}">
+                    <small *ngIf="exform.get('dob').invalid && exform.get('dob').touched" 
+                    class="text-danger">Date Of Birth is Required</small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-label">Government Proof</label>
+                    <span class="form-required">*</span>
+                    <select id="govtproof" class="form-control" [(ngModel)]="guest.govtProof"
+                    formControlName="proof">
+                      <option *ngFor="let p of proofs" [ngValue]="p">{{p}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-label">Govt. ID Number</label>
+                    <span class="form-required">*</span>
+                    <input type="text" class="form-control" id="govtid" name="govtid"
+                    [(ngModel)]="guest.govtId" formControlName="govtid">
+                    <small *ngIf="exform.get('govtid').invalid && exform.get('govtid').touched" 
+                      class="text-danger">Govt. ID is Required</small>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="form-label">Address Line1</label>
+                    <span class="form-required">*</span>
+                    <input type="text" class="form-control" id="add1" name="add1"
+                    [(ngModel)]="guest.address1" formControlName="add1">
+                    <small *ngIf="exform.get('add1').invalid && exform.get('add1').touched" 
+                        class="text-danger">Address Line1 is Required</small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-label">Address Line2</label>
+                    <span class="form-required">*</span>
+                    <input type="text" class="form-control" id="add2" name="add2"
+                    [(ngModel)]="guest.address2" formControlName="add2">
+                    <small *ngIf="exform.get('add2').invalid && exform.get('add2').touched" 
+                        class="text-danger">Address Line2 is Required</small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-label">Address Line3</label>
+                    <span class="form-required">*</span>
+                    <input type="text" class="form-control" id="add3" name="add3"
+                    [(ngModel)]="guest.address3" formControlName="add3">
+                    <small *ngIf="exform.get('add3').invalid && exform.get('add3').touched" 
+                        class="text-danger">Address Line3 is Required</small>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="form-label">State</label>
+                    <span class="form-required">*</span>
+                    <input type="text" class="form-control" id="state" name="state"
+                    [(ngModel)]="guest.state" formControlName="state">
+                    <small *ngIf="exform.get('state').invalid && exform.get('state').touched" 
+                        class="text-danger">State is Required</small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-label">City</label>
+                    <span class="form-required">*</span>
+                    <input type="text" class="form-control" id="city" name="city"
+                    [(ngModel)]="guest.city" formControlName="city">
+                    <small *ngIf="exform.get('city').invalid && exform.get('city').touched" 
+                        class="text-danger">City is Required</small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-label">Postal Code</label>
+                    <span class="form-required">*</span>
+                    <input type="text" class="form-control" id="zipcode" name="zipcode"
+                    [(ngModel)]="guest.zipcode" formControlName="zipcode">
+                    <small *ngIf="exform.get('zipcode').invalid && exform.get('zipcode').touched" 
+                        class="text-danger">Postal Code is Required</small>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="form-label">Date Of Joining</label>
+                    <span class="form-required">*</span>
+                    <input type="date" class="form-control" id="doj" name="doj"
+                    [(ngModel)]="guest.doj" formControlName="doj" min="{{minDOJ}}">
+                    <small *ngIf="exform.get('doj').invalid && exform.get('doj').touched" 
+                      class="text-danger">Date Of Joining is Required</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label">Date Of Leaving</label>
+                    <span class="form-required"><i>(optional)</i></span>
+                    <input type="date" class="form-control" id="dol" name="dol"
+                    [(ngModel)]="guest.dol" min="{{minDOL}}">
+                </div>
+            </div>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="submit">Create Guest</button>
+                <button class="btn btn-danger" type="reset">Reset Guest Details</button>
+            </div>
+        </form>
+    </div>
+</div>
