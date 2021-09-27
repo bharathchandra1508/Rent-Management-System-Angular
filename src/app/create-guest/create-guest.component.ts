@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Guest } from '../guest';
+import { GuestService } from '../guest.service';
 
 @Component({
   selector: 'app-create-guest',
@@ -34,7 +36,8 @@ export class CreateGuestComponent implements OnInit {
     this.minDOL = this.minDOJ;
   }
 
-  constructor() { }
+  constructor(private guestService: GuestService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.exform = new FormGroup({
@@ -88,7 +91,14 @@ export class CreateGuestComponent implements OnInit {
   onSubmit(){
     if(this.exform.valid){
       console.log(this.guest);
+      this.saveGuest();
     }
+  }
+
+  saveGuest(){
+    this.guestService.createGuest(this.guest).subscribe(data => {
+      console.log(data);
+    },error => console.log(error));
   }
 
 }
