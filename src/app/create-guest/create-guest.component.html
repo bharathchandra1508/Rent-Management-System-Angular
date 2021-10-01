@@ -2,6 +2,12 @@
     <div class="card-body">
         <h3>Enter Guest Details</h3>
         <br>
+        <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Oops..!!</strong>Enter all the * marked fields
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         <form (ngSubmit)="onSubmit()" [formGroup]="exform">
             <div class="form-group">
                 <label class="form-label">Name (As Per Govt. ID)</label>
@@ -125,7 +131,7 @@
                     <label class="form-label">Date Of Leaving</label>
                     <span class="form-required"><i>(optional)</i></span>
                     <input type="date" class="form-control" id="dol" name="dol"
-                    [(ngModel)]="guest.dol" min="{{minDOL}}">
+                    [(ngModel)]="guest.dol" min="{{minDOL}}" formControlName="doj">
                 </div>
             </div>
             <br>

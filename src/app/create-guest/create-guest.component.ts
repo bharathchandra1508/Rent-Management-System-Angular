@@ -13,6 +13,7 @@ export class CreateGuestComponent implements OnInit {
 
   guest: Guest = new Guest();
   exform!: FormGroup;
+  alert: boolean = false;
 
   proofs = ["Aadhar Card","PAN Card","Voter Card","Driving License","Passport"];
 
@@ -93,12 +94,20 @@ export class CreateGuestComponent implements OnInit {
       console.log(this.guest);
       this.saveGuest();
     }
+    else{
+      console.log(this.alert);
+      this.alert = true;
+    }
   }
 
   saveGuest(){
     this.guestService.createGuest(this.guest).subscribe(data => {
       console.log(data);
     },error => console.log(error));
+  }
+
+  closeAlert(){
+    this.alert = false;
   }
 
 }
