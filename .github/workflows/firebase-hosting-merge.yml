@@ -24,3 +24,4 @@ jobs:
           firebaseServiceAccount: >-
             ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RENT_MANAGEMENT_SYSTEM_ANGULAR
             }}
+          FIREBASE_TOKEN: RentManagementSystemAngular
