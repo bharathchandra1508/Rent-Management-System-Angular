@@ -14,6 +14,10 @@ jobs:
       - uses: actions/setup-node@main
         with:
           node-version: "14.x"
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: >-
+            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RENT_MANAGEMENT_SYSTEM_ANGULAR
+            }}
       - run: npm install
       - run: npm run build
       - uses: w9jds/firebase-action@master
