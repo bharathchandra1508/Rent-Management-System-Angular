@@ -72,7 +72,7 @@ export class CreateGuestComponent implements OnInit {
       'state' : new FormControl(null,
         [Validators.required,
         Validators.maxLength(20),
-        Validators.pattern('^[a-zA-Z_]+( [a-zA-Z_]+)*$']),
+        Validators.pattern('^[a-zA-Z_]+( [a-zA-Z_]+)*$')]),
       'city' : new FormControl(null,
         [Validators.required,
         Validators.maxLength(20),
