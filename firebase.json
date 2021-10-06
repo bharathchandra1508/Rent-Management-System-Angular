@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/room-management-system",
     "ignore": [
       "firebase.json",
       "**/.*",
