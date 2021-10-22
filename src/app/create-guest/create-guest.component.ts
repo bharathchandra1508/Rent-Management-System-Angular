@@ -91,6 +91,8 @@ export class CreateGuestComponent implements OnInit {
 
   onSubmit(){
     if(this.exform.valid){
+      this.guest.isActiveGuest = true;
+      this.guest.isRoomAllocated = false;
       this.saveGuest();
     }
     else{
