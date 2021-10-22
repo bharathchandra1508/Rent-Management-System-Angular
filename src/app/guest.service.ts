@@ -8,7 +8,7 @@ import { Guest } from './guest';
 })
 export class GuestService {
 
-  private baseURL = "http://localhost:8080/api/guest";
+  private baseURL = "http://localhost:8080/api/guest/create-guest";
 
   constructor(private httpClient: HttpClient) { }
 

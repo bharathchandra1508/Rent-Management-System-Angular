@@ -11,7 +11,9 @@ export class Guest {
     address3!: string;
     city!: string;
     state!: string;
-    zipcode!: string;
+    zipCode!: string;
     doj!: Date;
     dol!: Date;
+    isActiveGuest!: boolean;
+    isRoomAllocated!: boolean;
 }

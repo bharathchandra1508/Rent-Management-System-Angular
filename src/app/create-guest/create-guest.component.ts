@@ -91,7 +91,6 @@ export class CreateGuestComponent implements OnInit {
 
   onSubmit(){
     if(this.exform.valid){
-      console.log(this.guest);
       this.saveGuest();
     }
     else{
