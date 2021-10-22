@@ -77,7 +77,7 @@ export class CreateGuestComponent implements OnInit {
         [Validators.required,
         Validators.maxLength(20),
         Validators.pattern('^[a-zA-Z_]+( [a-zA-Z_]+)*$')]),
-      'zipcode' : new FormControl(null,
+      'zipCode' : new FormControl(null,
         [Validators.required,
         Validators.maxLength(6),
         Validators.pattern('^[0-9]+$')]),
