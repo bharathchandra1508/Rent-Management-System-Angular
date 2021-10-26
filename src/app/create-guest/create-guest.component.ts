@@ -103,8 +103,14 @@ export class CreateGuestComponent implements OnInit {
 
   saveGuest(){
     this.guestService.createGuest(this.guest).subscribe(data => {
-      console.log(data);
+      this.guest.id = Object(data)["id"];
+      this.allocateRoom(this.guest.id);
     },error => console.log(error));
+  }
+
+  allocateRoom(id: Number){
+    console.log(id);
+    this.router.navigate(['allocate-room',id]);
   }
 
   closeAlert(){

@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+        <h3>Room Allocation</h3>
+        <br>
+        <form (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="form-group col-md-6">
+                  <label class="form-label">Guest ID</label>
+                  <input type="text" class="form-control" id="id" name="id"
+                  [(ngModel)]="guest.id" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label">Guest's Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName"
+                    [(ngModel)]="guest.fullName" readonly>
+                </div>
+            </div>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="submit" class="btn btn-success">Allocate Room</button>
+            </div>
+        </form>
+    </div>
+</div>

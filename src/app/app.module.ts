@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateGuestComponent } from './create-guest/create-guest.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AllocateRoomComponent } from './allocate-room/allocate-room.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateGuestComponent
+    CreateGuestComponent,
+    AllocateRoomComponent
   ],
   imports: [
     BrowserModule,
